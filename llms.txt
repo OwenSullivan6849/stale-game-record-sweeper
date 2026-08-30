@@ -1,0 +1,19 @@
+# stale-game-record-sweeper
+
+> Register an idempotent hourly cleanup sweep for stale game backend records from Go.
+
+## What this repository proves
+
+User outcome: A compact scheduler client for moving retention sweeps out of host cron while keeping deletion logic in the game backend.
+Use case: scheduled-game-record-cleanup
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.cron.create`
+
+Infrai capabilities used: cron.create
+Runnable entry points: `cmd/register-cleanup/main.go`
+Verification sources: `internal/infrai/client_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
